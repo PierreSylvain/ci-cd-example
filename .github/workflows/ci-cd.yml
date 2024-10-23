@@ -43,7 +43,9 @@ jobs:
 
     # Étape 6: Pusher l'image sur DockerHub
     - name: Push Docker image
-      run: docker push pierresylvain/symfony-app:${{ github.sha }}
+      run: |
+        docker tag pierresylvain/symfony-app:${{ github.sha }} pierresylvain/symfony-app:latest
+        docker push pierresylvain/symfony-app:latest
 
   deploy:
     runs-on: self-hosted
