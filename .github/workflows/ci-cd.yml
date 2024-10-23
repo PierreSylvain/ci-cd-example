@@ -32,7 +32,7 @@ jobs:
 
     # Étape 4: Construire l'image Docker
     - name: Build Docker image
-      run: docker build -t your_dockerhub_username/symfony-app:${{ github.sha }} .
+      run: docker build -t pierresylvain/symfony-app:${{ github.sha }} .
 
     # Étape 5: Se connecter à DockerHub
     - name: Log in to DockerHub
@@ -43,7 +43,7 @@ jobs:
 
     # Étape 6: Pusher l'image sur DockerHub
     - name: Push Docker image
-      run: docker push your_dockerhub_username/symfony-app:${{ github.sha }}
+      run: docker push pierresylvain/symfony-app:${{ github.sha }}
 
   deploy:
     runs-on: ubuntu-latest
@@ -61,6 +61,6 @@ jobs:
 
     - name: Deploy to Kubernetes
       run: |
-        kubectl set image deployment/symfony-app symfony-app=your_dockerhub_username/symfony-app:${{ github.sha }}
+        kubectl set image deployment/symfony-app symfony-app=pierresylvain/symfony-app:${{ github.sha }}
 
      
