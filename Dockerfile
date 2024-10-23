@@ -22,4 +22,5 @@ RUN composer install --no-interaction --prefer-dist
 # Exposer le port par défaut de Symfony
 EXPOSE 9000
 RUN curl -sS https://get.symfony.com/cli/installer | bash
-CMD ["php-fpm"]
+
+CMD ["symfony", "server:start", "--no-tls", "--port=9000", "--dir=public"]
