@@ -19,6 +19,8 @@ spec:
         image: pierresylvain/symfony-app:latest
         ports:
         - containerPort: 9000
+      imagePullSecrets:
+        - name: regcred
 ---
 apiVersion: v1
 kind: Service
