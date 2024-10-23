@@ -20,9 +20,6 @@ COPY . .
 RUN composer install --no-interaction --prefer-dist
 
 # Exposer le port par défaut de Symfony
-EXPOSE 45663
-
-# Install Symfony CLI
+EXPOSE 9000
 RUN curl -sS https://get.symfony.com/cli/installer | bash
-
-CMD ["/root/.symfony5/bin/symfony/symfony", "serve"]
+CMD ["php-fpm"]
