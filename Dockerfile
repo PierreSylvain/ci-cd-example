@@ -23,7 +23,6 @@ RUN composer install --no-interaction --prefer-dist
 EXPOSE 45663
 
 # Install Symfony CLI
-RUN curl -sS https://get.symfony.com/cli/installer | bash && \
-	mv /root/.symfony/bin/symfony /usr/local/bin/symfony
+RUN curl -sS https://get.symfony.com/cli/installer | bash
 
-CMD ["symfony", "serve"]
+CMD ["/root/.symfony5/bin/symfony/symfony", "serve"]
