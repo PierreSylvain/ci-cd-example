@@ -35,7 +35,7 @@ Kubernetes est une plateforme open-source de gestion des conteneurs qui permet d
 
 Dans ce projet, Kubernetes est utilisé pour gérer l'application Symfony en production, en assurant une disponibilité continue et une mise à jour facile de l'application via un simple changement d'image.
 
-# chéma du Processus CI/CD
+# Schéma du Processus CI/CD
 
 ```mermaid
 graph TD
